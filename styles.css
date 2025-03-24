@@ -69,6 +69,7 @@ form {
 
 	background: linear-gradient(180deg, var(--color-2) 0%, #652cd1 100%);
 	border-radius: 1.5rem;
+	border: none;
 }
 #continue-button:hover {
 	cursor: pointer;
@@ -164,7 +165,7 @@ input {
 html,
 input,
 input::placeholder,
-.topic {
+.topic, #continue-button {
 	font-family: "Inter", sans-serif;
 	font-optical-sizing: auto;
 	color: var(--color-9);

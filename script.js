@@ -80,7 +80,7 @@ function runStepThree() {
 	nameSpan.textContent = userInfo.name;
 	emailSpan.textContent = userInfo.email;
 	userInfo.topics.forEach((topic) => {
-		topics.innerHTML += `<li>${topic}</li>`;
+		topics.innerHTML += `<li class="topic-chosen">${topic}</li>`;
 	});
 }
 function validateStepThree() {

@@ -95,6 +95,8 @@ function nextStep(currentStepIndex, nextStepIndex) {
 	stepDivs[nextStepIndex].classList.add("step--active");
 	stepDivs[nextStepIndex].appendChild(continueButton);
 	continueButton.addEventListener("click", validateSteps[nextStepIndex]);
+
+	document.getElementById("step-number").textContent = nextStepIndex + 1;
 	steps[nextStepIndex]();
 }
 

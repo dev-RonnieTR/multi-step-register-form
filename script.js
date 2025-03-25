@@ -64,6 +64,10 @@ function validateStepTwo() {
 			userInfo.topics.push(topic.textContent);
 	});
 
+	if (userInfo.topics.length === 0) {
+		alert("You must select at least one topic");
+		return;
+	}
 	nextStep(step, step + 1); //Args: (currentStepIndex, nextStepIndex)
 }
 

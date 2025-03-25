@@ -15,6 +15,9 @@ continueButton.appendChild(continueButtonText);
 continueButton.id = "continue-button";
 continueButton.type = "button";
 
+/* STEPPER CIRCLES */
+const circles = [...document.getElementsByClassName("circle")];
+
 /* INFOMRATION COLLECTED */
 const userInfo = {
 	name: null,
@@ -92,8 +95,6 @@ function toggleTopic(event) {
 }
 
 function nextStep(currentStepIndex, nextStepIndex) {
-	const circles = [...document.getElementsByClassName("circle")];
-
 	stepDivs[currentStepIndex].classList.remove("step--active");
 	circles[currentStepIndex].classList.remove("circle--active");
 	continueButton.removeEventListener("click", validateSteps[currentStepIndex]);

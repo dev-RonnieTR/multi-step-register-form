@@ -92,11 +92,15 @@ function toggleTopic(event) {
 }
 
 function nextStep(currentStepIndex, nextStepIndex) {
+	const circles = [...document.getElementsByClassName("circle")];
+
 	stepDivs[currentStepIndex].classList.remove("step--active");
+	circles[currentStepIndex].classList.remove("circle--active");
 	continueButton.removeEventListener("click", validateSteps[currentStepIndex]);
 	continueButton.remove();
 
 	stepDivs[nextStepIndex].classList.add("step--active");
+	circles[nextStepIndex].classList.add("circle--active");
 	stepDivs[nextStepIndex].appendChild(continueButton);
 	continueButton.addEventListener("click", validateSteps[nextStepIndex]);
 

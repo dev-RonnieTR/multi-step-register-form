@@ -29,6 +29,9 @@ function runStepOne() {
 	step = 0;
 	stepDivs[step].appendChild(continueButton);
 	continueButton.addEventListener("click", validateStepOne);
+	circles[0].onclick = enableCircleClick;
+	circles[1].onclick = ''; //Locks user from going to next steps if they just clicked on a previous step.
+	circles[2].onclick = '';
 }
 
 function validateStepOne() {
@@ -54,6 +57,8 @@ function runStepTwo() {
 	topicButtons.forEach((button) =>
 		button.addEventListener("click", toggleTopic)
 	);
+	circles[1].onclick = enableCircleClick;
+	circles[2].onclick = '';
 }
 
 function validateStepTwo() {
@@ -107,6 +112,24 @@ function nextStep(currentStepIndex, nextStepIndex) {
 
 	document.getElementById("step-number").textContent = nextStepIndex + 1;
 	steps[nextStepIndex]();
+}
+
+function enableCircleClick(event) {
+	circles.forEach((circle, index) => {
+		if (event.target === circle) {
+			circlesLogic(index);
+			return;
+		}
+	});
+}
+
+function circlesLogic(nextStepIndex) {
+	stepDivs.forEach((div, index) => {
+		if (div.classList.contains("step--active")) {
+			nextStep(index, nextStepIndex);
+			return;
+		}
+	});
 }
 
 runStepOne();

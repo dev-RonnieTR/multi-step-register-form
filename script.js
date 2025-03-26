@@ -62,11 +62,16 @@ function runStepTwo() {
 }
 
 function validateStepTwo() {
+	//Button declarations
 	const topicButtons = [
 		document.getElementById("software-development"),
 		document.getElementById("user-experience"),
 		document.getElementById("graphic-design"),
 	];
+	//Reset Values
+	userInfo.topics = [];
+
+	//Implementation
 	topicButtons.forEach((topic) => {
 		if (topic.classList.contains("topic--active"))
 			userInfo.topics.push(topic.textContent);
@@ -80,16 +85,19 @@ function validateStepTwo() {
 }
 
 function runStepThree() {
-	step = 2;
+	//Element declarations
 	const nameSpan = document.getElementById("name-span");
 	const emailSpan = document.getElementById("email-span");
 	const topics = document.getElementById("topics");
+	//Reset values
+	topics.innerHTML = ''
 
 	nameSpan.textContent = userInfo.name;
 	emailSpan.textContent = userInfo.email;
 	userInfo.topics.forEach((topic) => {
 		topics.innerHTML += `<li class="topic-chosen">${topic}</li>`;
 	});
+	step = 2;
 }
 function validateStepThree() {
 	alert("✅ Success");

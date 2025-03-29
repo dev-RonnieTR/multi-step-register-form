@@ -37,6 +37,8 @@ body {
 
 	background-color: var(--color-7);
 	background-image: url(resources/blur-radial.png);
+	background-repeat: no-repeat;
+	background-position: calc(50vw - 25rem) calc(50vh - 20rem);
 }
 form {
 	display: contents;

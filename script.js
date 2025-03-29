@@ -30,8 +30,8 @@ function runStepOne() {
 	stepDivs[step].appendChild(continueButton);
 	continueButton.addEventListener("click", validateStepOne);
 	circles[0].onclick = enableCircleClick;
-	circles[1].onclick = ''; //Locks user from going to next steps if they just clicked on a previous step.
-	circles[2].onclick = '';
+	circles[1].onclick = ""; //Locks user from going to next steps if they just clicked on a previous step.
+	circles[2].onclick = "";
 }
 
 function validateStepOne() {
@@ -58,7 +58,7 @@ function runStepTwo() {
 		button.addEventListener("click", toggleTopic)
 	);
 	circles[1].onclick = enableCircleClick;
-	circles[2].onclick = '';
+	circles[2].onclick = "";
 }
 
 function validateStepTwo() {
@@ -90,7 +90,7 @@ function runStepThree() {
 	const emailSpan = document.getElementById("email-span");
 	const topics = document.getElementById("topics");
 	//Reset values
-	topics.innerHTML = ''
+	topics.innerHTML = "";
 
 	nameSpan.textContent = userInfo.name;
 	emailSpan.textContent = userInfo.email;
